@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: testing_lab2_flyway
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testing
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
