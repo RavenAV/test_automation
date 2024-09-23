@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface ICalculationRepository extends JpaRepository<Calculation, Long> {
-    List<Calculation> findAllByCalculationDatetimeBetweenAndNumeralSystemAndOperationType(
+    List<Calculation> findAllByCalculationDatetimeBetweenAndFirstBaseAndSecondBaseAndOperationType(
             LocalDateTime start,
             LocalDateTime end,
             NumeralSystem firstBase,

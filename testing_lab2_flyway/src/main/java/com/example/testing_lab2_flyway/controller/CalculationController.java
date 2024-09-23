@@ -25,11 +25,12 @@ public class CalculationController {
     @PostMapping("/compute")
     public ResponseEntity<String> compute(
             @RequestParam String firstNumber,
+            @RequestParam NumeralSystem firstBase,
             @RequestParam String secondNumber,
-            @RequestParam NumeralSystem base,
+            @RequestParam NumeralSystem secondBase,
             @RequestParam OperationType operationType) {
 
-        String res = _calculationService.calculate(firstNumber, secondNumber, base, operationType);
+        String res = _calculationService.calculate(firstNumber, secondNumber, firstBase, secondBase, operationType);
         return ResponseEntity.ok(res);
     }
 
@@ -37,10 +38,11 @@ public class CalculationController {
     public ResponseEntity<List<Calculation>> getHistory(
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end,
-            @RequestParam NumeralSystem base,
+            @RequestParam NumeralSystem firstBase,
+            @RequestParam NumeralSystem secondBase,
             @RequestParam OperationType operationType) {
 
-        List<Calculation> calculations = _calculationService.getCalculationByDatetimeBetweenAndNumeralSystemAndOperationType(start, end, base, base, operationType);
+        List<Calculation> calculations = _calculationService.getCalculationByDatetimeBetweenAndNumeralSystemAndOperationType(start, end, firstBase, secondBase, operationType);
         return ResponseEntity.ok(calculations);
     }
 }
