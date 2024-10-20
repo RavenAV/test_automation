@@ -2,10 +2,9 @@ package com.example.testing_lab2_flyway.dto;
 
 import com.example.testing_lab2_flyway.calculator.NumeralSystem;
 import com.example.testing_lab2_flyway.calculator.OperationType;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter

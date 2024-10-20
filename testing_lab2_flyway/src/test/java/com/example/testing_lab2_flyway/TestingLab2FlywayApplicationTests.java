@@ -22,8 +22,10 @@ import java.util.List;
 
 @SpringBootTest(classes = TestingLab2FlywayApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class TestingLab2FlywayApplicationTests extends AuditVizualizationBaseTest {
+
 	@Autowired
 	CalculationService calculationService;
+
 	@LocalServerPort
 	private int port;
 
@@ -36,7 +38,7 @@ class TestingLab2FlywayApplicationTests extends AuditVizualizationBaseTest {
 		response = testRestTemplate.getForEntity(
 				String.format("http://localhost:%s/quantity?",
 						port),
-				Integer.class);
+						Integer.class);
 
 		Assertions.assertEquals(response.getStatusCode(), HttpStatus.OK);
 		Assertions.assertEquals(response.getBody(), 20);
@@ -53,12 +55,12 @@ class TestingLab2FlywayApplicationTests extends AuditVizualizationBaseTest {
 		ResponseEntity<String> response;
 		response = testRestTemplate.postForEntity(
 				String.format("http://localhost:%s/compute?firstNumber=%s&firstBase=%s&secondNumber=%s&secondBase=%s&operationType=%s",
-						port,
-						createRequest.getFirstNumber(),
-						createRequest.getFirstBase(),
-						createRequest.getSecondNumber(),
-						createRequest.getSecondBase(),
-						createRequest.getOperationType()),
+				port,
+				createRequest.getFirstNumber(),
+				createRequest.getFirstBase(),
+				createRequest.getSecondNumber(),
+				createRequest.getSecondBase(),
+				createRequest.getOperationType()),
 				null, String.class);
 
 		Assertions.assertEquals(response.getStatusCode(), HttpStatus.OK);
@@ -87,4 +89,5 @@ class TestingLab2FlywayApplicationTests extends AuditVizualizationBaseTest {
 		// сравниваем, что у нас три записи с такими параметрами
 		Assertions.assertEquals(response.getBody().size(), 3);
 	}
+
 }

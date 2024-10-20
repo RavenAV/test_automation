@@ -6,18 +6,16 @@ import com.example.testing_lab2_flyway.calculator.NumeralSystem;
 import com.example.testing_lab2_flyway.calculator.OperationType;
 import com.example.testing_lab2_flyway.domain.Calculation;
 import com.example.testing_lab2_flyway.repository.ICalculationRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class CalculationService {
     private final ICalculationRepository calculationRepository;
-
-    public CalculationService(ICalculationRepository calculationRepository) {
-        this.calculationRepository = calculationRepository;
-    }
 
     public String calculate(String num1, String num2, NumeralSystem firstBase, NumeralSystem secondBase, OperationType operationType) {
         Calculation calculation = new Calculation();

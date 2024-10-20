@@ -10,12 +10,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/calculation")
+//@RequestMapping("/calculation")
 public class CalculationController {
     private final CalculationService _calculationService;
+
 
     @Autowired
     public CalculationController(CalculationService calculationService) {
@@ -43,6 +45,7 @@ public class CalculationController {
             @RequestParam OperationType operationType) {
 
         List<Calculation> calculations = _calculationService.getCalculationByDatetimeBetweenAndNumeralSystemAndOperationType(start, end, firstBase, secondBase, operationType);
+
         return ResponseEntity.ok(calculations);
     }
 
@@ -53,4 +56,5 @@ public class CalculationController {
         System.out.println(quantity);
         return ResponseEntity.ok(quantity);
     }
+
 }
