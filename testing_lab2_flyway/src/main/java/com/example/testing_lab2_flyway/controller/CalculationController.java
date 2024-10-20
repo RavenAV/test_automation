@@ -45,4 +45,12 @@ public class CalculationController {
         List<Calculation> calculations = _calculationService.getCalculationByDatetimeBetweenAndNumeralSystemAndOperationType(start, end, firstBase, secondBase, operationType);
         return ResponseEntity.ok(calculations);
     }
+
+    @GetMapping("/quantity")
+    public ResponseEntity<Integer> getQuantity() {
+
+        Integer quantity = _calculationService.getCountBy();
+        System.out.println(quantity);
+        return ResponseEntity.ok(quantity);
+    }
 }

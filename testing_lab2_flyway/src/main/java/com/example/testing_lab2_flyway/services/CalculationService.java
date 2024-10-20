@@ -48,4 +48,8 @@ public class CalculationService {
     public List<Calculation> getCalculationByDatetimeBetweenAndNumeralSystemAndOperationType(LocalDateTime start, LocalDateTime end, NumeralSystem firstBase, NumeralSystem secondBase, OperationType operationType) {
         return calculationRepository.findAllByCalculationDatetimeBetweenAndFirstBaseAndSecondBaseAndOperationType(start, end, firstBase, secondBase, operationType);
     }
+
+    public int getCountBy(){
+        return calculationRepository.countAllBy();
+    }
 }

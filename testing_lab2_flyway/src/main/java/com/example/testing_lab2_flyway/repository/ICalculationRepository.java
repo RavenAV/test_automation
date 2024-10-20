@@ -18,4 +18,6 @@ public interface ICalculationRepository extends JpaRepository<Calculation, Long>
             NumeralSystem secondBase,
             OperationType operationType
     );
+
+    Integer countAllBy();
 }
