@@ -56,5 +56,4 @@ public class CalculationController {
         System.out.println(quantity);
         return ResponseEntity.ok(quantity);
     }
-
 }

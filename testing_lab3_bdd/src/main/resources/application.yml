@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: testing_lab3_bdd
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/autotest
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+#spring.jpa.database=postgresql
+#spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+#
+#spring.jpa.show-sql=true

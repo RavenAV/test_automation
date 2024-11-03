@@ -4,8 +4,6 @@ import com.example.testing_lab2_flyway.calculator.NumeralSystem;
 import com.example.testing_lab2_flyway.calculator.OperationType;
 import lombok.*;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @AllArgsConstructor
