@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -26,7 +27,6 @@ public class CalculationController {
 
     @PostMapping("/compute")
     public ResponseEntity<String> compute(@RequestBody AddCalculationRequest request) {
-
         String res = _calculationService.calculate(request.getFirstNumber(), request.getSecondNumber(), request.getFirstBase(), request.getSecondBase(), request.getOperationType());
         return ResponseEntity.ok(res);
     }
@@ -50,6 +50,11 @@ public class CalculationController {
         Integer quantity = _calculationService.getCountBy();
         System.out.println(quantity);
         return ResponseEntity.ok(quantity);
+    }
+
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity<String> handleResponseStatusException(ResponseStatusException ex) {
+        return ResponseEntity.status(ex.getStatusCode()).body(ex.getMessage());
     }
 
 }

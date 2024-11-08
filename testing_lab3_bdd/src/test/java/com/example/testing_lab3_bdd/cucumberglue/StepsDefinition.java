@@ -17,6 +17,7 @@ import org.junit.jupiter.api.Assertions;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -43,7 +44,6 @@ public class StepsDefinition {
         var calculations = new ArrayList<Calculation>();
         for (Map<String, String> row : table) {
             var calculation = new Calculation();
-            calculation.setId(Long.parseLong(row.get("id")));
             calculation.setFirstNumber(row.get("first_number"));
             calculation.setFirstBase(NumeralSystem.valueOf(row.get("first_base")));
             calculation.setSecondNumber(row.get("second_number"));
@@ -81,9 +81,13 @@ public class StepsDefinition {
 
     @Тогда("ответ получения вычислений")
     public void ответ(String responseJson) throws Exception {
-        Assertions.assertArrayEquals(
+        assertThat(mapper.readValue(responseJson, Calculation[].class))
+                .usingRecursiveComparison()
+                .ignoringFields("id")
+                .isEqualTo(getCalculationsResponse.getBody());
+        /*Assertions.assertArrayEquals(
                 mapper.readValue(responseJson, Calculation[].class),
-                getCalculationsResponse.getBody());
+                getCalculationsResponse.getBody());*/
     }
 
     // Успешное получение вычислений (дата)
@@ -109,9 +113,14 @@ public class StepsDefinition {
 
     @Тогда("ответ получения вычислений \\(дата)")
     public void ответ_получения_вычислений_дата(String responseJson) throws Exception {
-        Assertions.assertArrayEquals(
+        /*Assertions.assertArrayEquals(
                 mapper.readValue(responseJson, Calculation[].class),
-                getCalculationsResponse.getBody());
+                getCalculationsResponse.getBody());*/
+
+        assertThat(mapper.readValue(responseJson, Calculation[].class))
+                .usingRecursiveComparison()
+                .ignoringFields("id")
+                .isEqualTo(getCalculationsResponse.getBody());
     }
 
     // Успешное добавление вычисления
@@ -203,5 +212,4 @@ public class StepsDefinition {
     public void ответ_добавления_вычисления_класс(String response) {
         Assertions.assertEquals(response, addCalculationResponse.getBody());
     }
-
 }

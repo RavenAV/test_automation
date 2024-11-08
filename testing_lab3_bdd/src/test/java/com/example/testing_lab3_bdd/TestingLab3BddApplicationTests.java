@@ -3,7 +3,6 @@ package com.example.testing_lab3_bdd;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.TestConfiguration;
 
-
 @TestConfiguration(proxyBeanMethods = false)
 class TestingLab3BddApplicationTests {
 

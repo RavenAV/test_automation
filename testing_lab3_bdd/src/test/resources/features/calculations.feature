@@ -4,27 +4,27 @@
 
 Предыстория:
   Дано таблица calculations содержит
-    | first_number | first_base      | second_number | second_base    | operation_type | calculation_datetime   | id |
-    | 10           | DECIMAL         | 10            | BINARY         | ADDITION       | 2024-11-01T12:00:00    | 1  |
-    | 25           | HEXADECIMAL     | 20            | OCTAL          | SUBTRACTION    | 2024-11-01T12:00:00    | 2  |
-    | 7            | OCTAL           | 20            | DECIMAL        | MULTIPLICATION | 2024-11-01T12:00:00    | 3  |
-    | 15           | DECIMAL         | 1             | HEXADECIMAL    | DIVISION       | 2024-11-02T12:00:00    | 4  |
-    | 4            | OCTAL           | 1             | BINARY         | ADDITION       | 2024-11-02T12:00:00    | 5  |
-    | 35           | HEXADECIMAL     | 1             | OCTAL          | SUBTRACTION    | 2024-11-03T12:00:00    | 6  |
-    | 11           | DECIMAL         | 1             | DECIMAL        | MULTIPLICATION | 2024-11-03T12:00:00    | 7  |
-    | 28           | DECIMAL         | 1             | HEXADECIMAL    | DIVISION       | 2024-11-03T12:00:00    | 8  |
-    | 22           | DECIMAL         | 1             | BINARY         | ADDITION       | 2024-11-04T12:00:00    | 9  |
-    | 21           | HEXADECIMAL     | 1             | OCTAL          | SUBTRACTION    | 2024-11-04T12:00:00    | 10 |
-    | 21           | DECIMAL         | 1             | DECIMAL        | MULTIPLICATION | 2024-11-04T12:00:00    | 11 |
-    | 25           | DECIMAL         | 1             | HEXADECIMAL    | DIVISION       | 2024-11-04T12:00:00    | 12 |
-    | 26           | HEXADECIMAL     | 1             | BINARY         | ADDITION       | 2024-11-05T12:00:00    | 13 |
-    | 2            | OCTAL           | 1             | OCTAL          | SUBTRACTION    | 2024-11-05T12:00:00    | 14 |
-    | 85           | DECIMAL         | 1             | DECIMAL        | MULTIPLICATION | 2024-11-05T12:00:00    | 15 |
-    | 58           | HEXADECIMAL     | 1             | HEXADECIMAL    | DIVISION       | 2024-11-05T12:00:00    | 16 |
-    | 24           | DECIMAL         | 1             | BINARY         | ADDITION       | 2024-11-06T12:00:00    | 17 |
-    | 4            | OCTAL           | 2             | OCTAL          | SUBTRACTION    | 2024-11-06T12:00:00    | 18 |
-    | 17           | DECIMAL         | 25            | DECIMAL        | MULTIPLICATION | 2024-11-06T12:00:00    | 19 |
-    | 19           | HEXADECIMAL     | 45            | HEXADECIMAL    | DIVISION       | 2024-11-06T12:00:00    | 20 |
+    | first_number | first_base      | second_number | second_base    | operation_type | calculation_datetime   |
+    | 10           | DECIMAL         | 10            | BINARY         | ADDITION       | 2024-11-01T12:00:00    |
+    | 25           | HEXADECIMAL     | 20            | OCTAL          | SUBTRACTION    | 2024-11-01T12:00:00    |
+    | 7            | OCTAL           | 20            | DECIMAL        | MULTIPLICATION | 2024-11-01T12:00:00    |
+    | 15           | DECIMAL         | 1             | HEXADECIMAL    | DIVISION       | 2024-11-02T12:00:00    |
+    | 4            | OCTAL           | 1             | BINARY         | ADDITION       | 2024-11-02T12:00:00    |
+    | 35           | HEXADECIMAL     | 1             | OCTAL          | SUBTRACTION    | 2024-11-03T12:00:00    |
+    | 11           | DECIMAL         | 1             | DECIMAL        | MULTIPLICATION | 2024-11-03T12:00:00    |
+    | 28           | DECIMAL         | 1             | HEXADECIMAL    | DIVISION       | 2024-11-03T12:00:00    |
+    | 22           | DECIMAL         | 1             | BINARY         | ADDITION       | 2024-11-04T12:00:00    |
+    | 21           | HEXADECIMAL     | 1             | OCTAL          | SUBTRACTION    | 2024-11-04T12:00:00    |
+    | 21           | DECIMAL         | 1             | DECIMAL        | MULTIPLICATION | 2024-11-04T12:00:00    |
+    | 25           | DECIMAL         | 1             | HEXADECIMAL    | DIVISION       | 2024-11-04T12:00:00    |
+    | 26           | HEXADECIMAL     | 1             | BINARY         | ADDITION       | 2024-11-05T12:00:00    |
+    | 2            | OCTAL           | 1             | OCTAL          | SUBTRACTION    | 2024-11-05T12:00:00    |
+    | 85           | DECIMAL         | 1             | DECIMAL        | MULTIPLICATION | 2024-11-05T12:00:00    |
+    | 58           | HEXADECIMAL     | 1             | HEXADECIMAL    | DIVISION       | 2024-11-05T12:00:00    |
+    | 24           | DECIMAL         | 1             | BINARY         | ADDITION       | 2024-11-06T12:00:00    |
+    | 4            | OCTAL           | 2             | OCTAL          | SUBTRACTION    | 2024-11-06T12:00:00    |
+    | 17           | DECIMAL         | 25            | DECIMAL        | MULTIPLICATION | 2024-11-06T12:00:00    |
+    | 19           | HEXADECIMAL     | 45            | HEXADECIMAL    | DIVISION       | 2024-11-06T12:00:00    |
 
   @success
   Сценарий: Успешное получение вычислений
@@ -39,7 +39,7 @@
 		"""
 		[
 		    {
-		        "id": 1,
+		        "id": 1506,
 		        "firstNumber": "10",
 		        "firstBase": "DECIMAL",
 		        "secondNumber": "10",
@@ -60,7 +60,7 @@
 		"""
 		[
 		    {
-		        "id": 1,
+		        "id": 1526,
 		        "firstNumber": "10",
 		        "firstBase": "DECIMAL",
 		        "secondNumber": "10",
