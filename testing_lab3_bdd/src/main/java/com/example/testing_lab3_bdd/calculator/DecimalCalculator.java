@@ -21,7 +21,7 @@ public class DecimalCalculator implements ICalculator {
 
     @Override
     public String divide(String num1, String num2) {
-        int result = Integer.parseInt(num1) / Integer.parseInt(num2);
-        return Integer.toString(result);
+        double result = Double.parseDouble(num1) / Double.parseDouble(num2);
+        return Double.toString(result);
     }
 }

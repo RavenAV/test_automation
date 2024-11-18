@@ -1,0 +1,29 @@
+<div class='center'>
+  <main class='card space-y-4'>
+    <app-number [legend]="'First number'" [calcNumber]="a"></app-number>
+
+    <label>
+      Operation
+      <select (change)="handleChangeOperation($event)" style="margin-left: 10px;">
+        <option value='' hidden>--</option>
+        <option [value]='OperationType.ADDITION'>ADDITION</option>
+        <option [value]='OperationType.SUBTRACTION'>SUBTRACTION</option>
+        <option [value]='OperationType.MULTIPLICATION'>MULTIPLICATION</option>
+        <option [value]='OperationType.DIVISION'>DIVISION</option>
+      </select>
+    </label>
+
+    <app-number [legend]="'Second number'" [calcNumber]="b"
+      [banZero]="operation === OperationType.DIVISION"></app-number>
+
+    <button (click)="calculate()">Compute</button>
+
+    <label style="font-size: 18px;">
+      Result
+      <output appResult [result]="result">{{ result | result:6 }}</output>
+    </label>
+  </main>
+</div>
+
+
+<router-outlet />

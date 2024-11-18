@@ -1,0 +1,20 @@
+<fieldset>
+    <legend>{{ legend }}</legend>
+    <div class='space-y-2'>
+        <label>
+            Numeral system
+            <select (change)="handleChangeBase($event)">
+                <option [value]='NumeralSystem.BINARY'>BINARY</option>
+                <option [value]='NumeralSystem.OCTAL'>OCTAL</option>
+                <option [value]='NumeralSystem.DECIMAL' selected>DECIMAL</option>
+                <option [value]='NumeralSystem.HEXADECIMAL'>HEXADECIMAL</option>
+            </select>
+        </label>
+
+        <label>
+            Value
+            <input (keydown)="handleKeyDown($event)" (paste)="handlePasteOrDrop($event, $event.clipboardData!)"
+                (drop)="handlePasteOrDrop($event, $event.dataTransfer!)" (change)="handleChangeValue($event)" />
+        </label>
+    </div>
+</fieldset>

@@ -25,6 +25,7 @@ public class CalculationController {
         this._calculationService = calculationService;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/compute")
     public ResponseEntity<String> compute(@RequestBody AddCalculationRequest request) {
         String res = _calculationService.calculate(request.getFirstNumber(), request.getSecondNumber(), request.getFirstBase(), request.getSecondBase(), request.getOperationType());
