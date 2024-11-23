@@ -1,0 +1,17 @@
+{
+  "name": "testing_cypress",
+  "version": "1.0.0",
+  "description": "testing angular app with cypress",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "author": "RavenAV",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.5.0",
+    "typescript": "latest",
+    "@cypress/browserify-preprocessor": "latest",
+    "@badeball/cypress-cucumber-preprocessor": "^19.1.0"
+  }
+}
